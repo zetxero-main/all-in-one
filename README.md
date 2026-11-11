@@ -2,7 +2,7 @@
 
 รวมผลงานทุกชิ้นของลิกไว้ที่เดียว — หาง่าย ไม่กระจัดกระจาย
 
-**เว็บสารบัญ:** https://saharatyokthuan.github.io/all-in-one/
+**เว็บสารบัญ:** https://zetxero-main.github.io/all-in-one/
 
 ## โครงสร้าง
 
@@ -27,7 +27,7 @@
 |---|---|
 | `name` | ชื่อที่แสดงบนการ์ด |
 | `repo` | ชื่อรีโพบน GitHub (เว้นว่าง `''` ถ้ายังไม่ได้อัปขึ้น) — จะมีปุ่ม "GitHub" ให้อัตโนมัติ |
-| `web` | ใส่ `web:true` ถ้ารีโพนั้นเปิด GitHub Pages แล้ว — ปุ่ม "เปิดเว็บ" จะลิงก์ไป `https://saharatyokthuan.github.io/<repo>/` ให้เอง (ไม่ต้องพิมพ์ลิงก์) |
+| `web` | ใส่ `web:true` ถ้ารีโพนั้นเปิด GitHub Pages แล้ว — ปุ่ม "เปิดเว็บ" จะลิงก์ไป `https://zetxero-main.github.io/<repo>/` ให้เอง (ไม่ต้องพิมพ์ลิงก์) |
 | `site` | ใช้เฉพาะเมื่อเว็บอยู่ที่ลิงก์อื่น (เช่นโดเมนของตัวเอง, Firebase) — ถ้าใส่ จะใช้ลิงก์นี้แทนลิงก์จาก `web` |
 | `cat` | หมวดหมู่ ต้องตรงกับใน `CATS` |
 | `desc` | คำอธิบายสั้นๆ |
@@ -42,7 +42,7 @@
 
 ## เว็บ (GitHub Pages)
 
-เปิด GitHub Pages ไว้แล้วที่ https://saharatyokthuan.github.io/all-in-one/ — แก้ `index.html` แล้ว commit ขึ้น main เว็บจะอัปเดตเองภายใน 1–2 นาที
+เปิด GitHub Pages ไว้แล้วที่ https://zetxero-main.github.io/all-in-one/ — แก้ `index.html` แล้ว commit ขึ้น main เว็บจะอัปเดตเองภายใน 1–2 นาที
 
 ## โปรเจกต์ที่ยังไม่ขึ้น GitHub
 
