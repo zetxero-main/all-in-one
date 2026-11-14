@@ -66,7 +66,8 @@
 // site  = ลิงก์เว็บที่เปิดใช้ได้ (ถ้ามี)
 // web   = true ถ้ารีโพนั้นเปิด GitHub Pages แล้ว (ลิงก์เว็บจะสร้างให้อัตโนมัติ)
 // cat   = หมวดหมู่ ต้องตรงกับใน CATS
-const USER = 'saharatyokthuan';
+// owner = บัญชี/องค์กรเจ้าของรีโพ (ใส่เฉพาะเมื่อไม่ใช่ USER)
+const USER = 'zetxero-main';
 const CATS = ['การเงิน','งานร้าน','POS','Vending','เรียนรู้','AI & เครื่องมือ','อื่นๆ'];
 
 const PROJECTS = [
@@ -83,26 +84,27 @@ const PROJECTS = [
 
   // --- งานร้าน 7-Eleven ---
   {name:'timein-out', repo:'timein-out', web:true, cat:'งานร้าน', desc:'บันทึกเวลาเข้า-ออกงาน'},
-  {name:'weekly-shift-scheduler', repo:'', cat:'งานร้าน', desc:'จัดตารางงานพนักงานรายสัปดาห์'},
+  {name:'ShiftMate', repo:'shiftmate', web:true, cat:'งานร้าน', desc:'จัดตารางงานพนักงานรายสัปดาห์ เน้นมือถือ เก็บใน localStorage · มี backend Flask + SQLite เสริม ส่งออก JSON/CSV/XLSX'},
   {name:'expiry-tracker (PMA)', repo:'', cat:'งานร้าน', desc:'ติดตามสินค้าใกล้หมดอายุ แจ้งเตือนล่วงหน้า'},
   {name:'shift-sales-report', repo:'', cat:'งานร้าน', desc:'storerecord.py บันทึกยอดขายรายกะ'},
   {name:'rider-check-order', repo:'', cat:'งานร้าน', desc:'เช็กลิสต์ส่งของไรเดอร์'},
 
   // --- POS ---
   {name:'POS_MB', repo:'POS_MB', web:true, cat:'POS', desc:'Personal Store tracker — POS บนมือถือ'},
-  {name:'POS Mobile HTML5', repo:'', cat:'POS', desc:'POS เต็มระบบ + backend Python/SQLite'},
+  {name:'POS Mobile HTML5', repo:'pos-mobile', web:true, cat:'POS', desc:'POS เต็มระบบ + backend Python/SQLite'},
   {name:'Mobile POS V2', repo:'', cat:'POS', desc:'Tkinter + SQLite บน Pydroid 3'},
 
   // --- Vending ---
   {name:'vending-status', repo:'vending-status', web:true, cat:'Vending', desc:'สถานะตู้ Vending'},
-  {name:'vender', repo:'vender', cat:'Vending', desc:'ระบบจัดการตู้ Vending'},
+  {name:'vender', repo:'vender', web:true, cat:'Vending', desc:'ระบบจัดการตู้ Vending'},
   {name:'ivenmachine', repo:'ivenmachine', web:true, cat:'Vending', desc:'จัดการสต็อกตู้ Vending'},
   {name:'vending-management-system', repo:'', cat:'Vending', desc:'ผังช่อง สต็อก เหรียญ นำเข้า xlsx/CMS'},
 
   // --- เรียนรู้ ---
-  {name:'python-lessons', repo:'python-lessons', cat:'เรียนรู้', desc:'คอร์ส Python สู่การวิเคราะห์ข้อมูล 5 บท พร้อมแบบฝึกหัด'},
+  {name:'python-lessons', repo:'python-lessons', web:true, cat:'เรียนรู้', desc:'คอร์ส Python สู่การวิเคราะห์ข้อมูล 5 บท พร้อมแบบฝึกหัด'},
   {name:'python', repo:'python', web:true, cat:'เรียนรู้', desc:'เว็บเรียน Python'},
   {name:'learnhtml5', repo:'learnhtml5', web:true, cat:'เรียนรู้', desc:'เรียน HTML5'},
+  {name:'30 วัน พื้นฐาน Python', repo:'readme', cat:'เรียนรู้', desc:'สรุปพื้นฐาน Python 30 วันเป็นภาษาไทย (Markdown แบ่งเป็น 10 ตอน)'},
   {name:'online-book', repo:'', cat:'เรียนรู้', desc:'เว็บอ่านหนังสือ มือถือ บันทึกตำแหน่งที่อ่าน'},
 
   // --- AI & เครื่องมือ ---
@@ -115,7 +117,8 @@ const PROJECTS = [
 
   // --- อื่นๆ ---
   {name:'root-home', repo:'root-home', cat:'อื่นๆ', desc:'โฮมไดเรกทอรีรวมหลายโปรเจกต์ (Cash-Flow, pos-mobile, shiftmate ฯลฯ)'},
-  {name:'โปรไฟล์ GitHub', repo:'saharatyokthuan', cat:'อื่นๆ', desc:'README หน้าโปรไฟล์'},
+  {name:'โปรไฟล์ GitHub', repo:'zetxero-ceo', owner:'zetxero-ceo', cat:'อื่นๆ', desc:'README หน้าโปรไฟล์'},
+  {name:'community', repo:'community', cat:'อื่นๆ', desc:'Community Hub — พื้นที่พูดคุย ไอเดีย ถาม-ตอบ และประกาศ (GitHub Discussions)'},
   {name:'clothing-shop', repo:'', cat:'อื่นๆ', desc:'เว็บโชว์เสื้อผ้า สั่งผ่าน LINE + หน้าแอดมิน'},
   {name:'zetxero (เว็บเอเจนซี่การตลาด)', repo:'all-in-one', site:'zetxero/', cat:'อื่นๆ', desc:'หน้าแรกเว็บเอเจนซี่การตลาดดิจิทัล — ดีไซน์ธีมน้ำเงิน/มิ้นต์ (อยู่ในโฟลเดอร์ zetxero/)'},
 ];
@@ -142,7 +145,7 @@ function card(p){
   const links = [];
   const site = p.site || (p.web && p.repo ? `https://${USER}.github.io/${p.repo}/` : '');
   if (site) links.push(`<a class="site" href="${esc(site)}" target="_blank" rel="noopener">เปิดเว็บ</a>`);
-  if (p.repo) links.push(`<a href="https://github.com/${USER}/${esc(p.repo)}" target="_blank" rel="noopener">GitHub</a>`);
+  if (p.repo) links.push(`<a href="https://github.com/${esc(p.owner || USER)}/${esc(p.repo)}" target="_blank" rel="noopener">GitHub</a>`);
   return `<div class="card">
     <h3>${esc(p.name)}</h3>
     <p>${esc(p.desc || '')}</p>
